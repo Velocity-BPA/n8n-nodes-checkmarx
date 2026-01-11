@@ -1,0 +1,84 @@
+{
+  "name": "n8n-nodes-checkmarx",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Checkmarx One application security testing platform providing 12 resources and 80+ operations for SAST, SCA, KICS, and API security scanning automation.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-checkmarx.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-checkmarx#readme",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-checkmarx/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "checkmarx",
+    "checkmarx-one",
+    "security",
+    "sast",
+    "sca",
+    "kics",
+    "application-security",
+    "vulnerability-scanning",
+    "code-analysis",
+    "devsecops",
+    "appsec",
+    "static-analysis"
+  ],
+  "main": "dist/nodes/Checkmarx/Checkmarx.node.js",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/CheckmarxOneApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Checkmarx/Checkmarx.node.js",
+      "dist/nodes/Checkmarx/CheckmarxTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "format:check": "prettier --check \"**/*.ts\"",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.30.0",
+    "prettier": "^3.2.0",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  }
+}
